@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)file:///C:/aws220726/Java0726/javascript0907/test/portpolio/profile/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROFILE</title>
+  <link rel="stylesheet" href="./PROFILE_files/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+    body {
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .mainPage {
+      margin: 25px 0;
+      color: #111;
+      text-decoration: none;
+    }
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      min-height: 1000px;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      box-shadow: 0 35px 55px rgb(0, 0, 0, 0.5);
+    }
+    .container .left_Side {
+      position: relative;
+      background-color: #003147;
+      padding: 40px;
+    }
+    .profileText {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgb(225, 225 ,225, 0.2);
+    }
+    .profileText .imgBx {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .profileText .imgBx img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .profileText h2 {
+      color: #fff;
+      font-size: 1.5em;
+      margin-top: 20px;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 600;
+      line-height: 1.4em;
+    }
+    .profileText h2 span {
+      font-size: 0.8em;
+      font-weight: 300;
+    }
+    .contactInfo {
+      padding-top: 40px;
+    }
+    .title {
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .contactInfo ul {
+      position: relative;
+    }
+    .contactInfo li {
+      position: relative;
+      list-style: none;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    .contactInfo ul li .icon {
+      display: inline-block;
+      width: 30px;
+      font-size: 18px;
+      color: #03a9f4;
+    }
+    .contactInfo ul li span {
+      color: #fff;
+      font-weight: 300;
+    }
+    .contactInfo.education li {
+      margin-bottom: 15px;
+    }
+    .contactInfo.education h5 {
+      color: #03a9f4;
+      font-weight: 500;
+    }
+    .contactInfo.education h4:nth-child(2) {
+      color: #fff;
+      font-weight: 500;
+    }
+    .contactInfo.education h4 {
+      color: #fff;
+      font-weight: 300;
+    }
+    .contactInfo.language .percent {
+      position: relative;
+      width: 100%;
+      height: 6px;
+      background: #081921;
+      display: block;
+      margin-top: 5px;
+    }
+    .contactInfo.language .percent div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: #03a9f4;
+    }
+    .container .right_Side {
+      position: relative;
+      background-color: #fff;
+      padding: 40px;
+    }
+    .about {
+      margin-bottom: 50px;
+    }
+    .about:last-child {
+      margin-bottom: 0;
+    }
+    .title2 {
+      color: #003147;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #333;
+    }
+    .about .box {
+      display: flex;
+      flex-direction: row;
+      margin: 20px 0;
+    }
+    .about .box .year_company {
+      min-width: 150px;
+    }
+    .about .box .year_company h5 {
+      text-transform: uppercase;
+      color: #848c90;
+      font-weight: 600;
+    }
+    .about .box .text h4 {
+      text-transform: uppercase;
+      color: #2a7d2a;
+      font-size: 16px;
+    }
+    .skills .box {
+      position: relative;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      justify-content: center;
+      align-items: center;
+    }
+    .skills .box h4 {
+      color: #848c99;
+      font-weight: 500;
+    }
+    .skills .box .percent {
+      position: relative;
+      width: 100%;
+      height: 10px;
+      background: #f0f0f0;
+    }
+    .skills .box .percent div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: #03a9f4;
+    }
+    .interest ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .interest ul li {
+      list-style: none;
+      color: #333;
+      font-weight: 500px;
+      margin: 10px 0;
+    }
+    .interest ul li .fa {
+      color: #03a9f4;
+      font-size: 18px;
+      width: 25px;
+    }
+    @media (max-width: 1000px) {
+      .container {
+        margin: 10px;
+        grid-template-columns: repeat(1, 1fr);
+      }
+      .interest ul {
+        margin: 10px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .about .box {
+        flex-direction: column;
+      }
+      .about .box .year_company {
+        margin-bottom: 5px;
+      }
+      .interest ul {
+        margin: 10px;
+        grid-template-columns: repeat(1, 1fr);
+      }
+      .skills .box {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left_Side">
+      <div class="profileText">
+        <div class="imgBx">
+          <img src="./PROFILE_files/main_pic.jpg">
+
+        </div>
+        <h2>James Lee<br><span>Full Stack Developer</span></h2>
+      </div>
+
+      <div class="contactInfo">
+        <h3 class="title">Contact Info</h3>
+        <ul>
+          <li>
+            <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+            <span class="text">010-5672-0824</span>
+          </li>
+          <li>
+            <span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+            <span class="text">fownd789@naver.com</span>
+          </li>
+          <li>
+            <span class="icon"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+            <span class="text">Instagram</span>
+          </li>
+          <li>
+            <span class="icon"><i class="fa fa-github" aria-hidden="true"></i></span>
+            <span class="text">Git hub</span>
+          </li>
+          <li>
+            <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+            <span class="text">Korea, Seoul</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="contactInfo education">
+        <h3 class="title">Education</h3>
+        <ul>
+          <li>
+            <h5>2022. 7 - 2023. 1</h5>
+            <h4>Ezen Academy</h4>
+            <h4>Full Stack</h4>
+          </li>
+          <li>
+            <h5>2016. 9 - 2020. 7</h5>
+            <h4>중국해양대학교</h4>
+            <h4>국제무역</h4>
+          </li>
+          <li>
+            <h5>2014. 9 - 2016. 6</h5>
+            <h4>육군</h4>
+            <h4>상근</h4>
+          </li>
+          <li>
+            <h5>2009 - 2014</h5>
+            <h4>New Zealand</h4>
+            <h4>Hagley Community College</h4>
+            <h4>중,고등 학교</h4>
+          </li>
+        </ul>
+      </div>
+
+      <div class="contactInfo language">
+        <h3 class="title">Languages</h3>
+        <ul>
+          <li>
+            <span class="text">Korean</span>
+            <div class="percent">
+              <div style="width: 90%"></div>
+            </div>
+          </li>
+          <li>
+            <span class="text">English</span>
+            <div class="percent">
+              <div style="width: 75%"></div>
+            </div>
+          </li>
+          <li>
+            <span class="text">Chinese</span>
+            <div class="percent">
+              <div style="width: 60%"></div>
+            </div>
+          </li>
+        </ul>
+      </div>         
+
+    </div>
+    <div class="right_Side">
+      <div class="about">
+        <h2 class="title2">Profile</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, quod sed minus explicabo natus numquam in, deleniti veniam quia ratione ex temporibus quae dolor aspernatur eligendi perferendis dolorum eos corporis?Lorem ipsum dolor sit amet consectetur adipisicing elit.<br><br>Voluptatem voluptates, suscipit quos culpa totam, nesciunt ea reiciendis atque aliquid, minus quaerat repellat repudiandae tempora sed iusto numquam sapiente enim laborum.</p>
+      </div>
+      <div class="about">
+        <h2 class="title2">Experience</h2>
+        <div class="box">
+          <div class="year_company">
+            <h5>2021 - Present</h5>
+            <h5>Name</h5>
+          </div>
+          <div class="text">
+            <h4>Learn</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum ad ea nam a quia doloremque mollitia quidem, beatae natus repudiandae optio quibusdam.</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="year_company">
+            <h5>2021 - Present</h5>
+            <h5>Name</h5>
+          </div>
+          <div class="text">
+            <h4>Learn</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum ad ea nam a quia doloremque mollitia quidem, beatae natus repudiandae optio quibusdam.</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="year_company">
+            <h5>2021 - Present</h5>
+            <h5>Name</h5>
+          </div>
+          <div class="text">
+            <h4>Learn</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum ad ea nam a quia doloremque mollitia quidem, beatae natus repudiandae optio quibusdam.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about skills">
+        <h2 class="title2">What I Learned</h2>
+        <div class="box">
+          <h4>Html5</h4>
+          <div class="percent">
+            <div style="width: 70%"></div>
+          </div>
+        </div>
+        <div class="box">
+          <h4>CSS3</h4>
+          <div class="percent">
+            <div style="width: 60%"></div>
+          </div>
+        </div>
+        <div class="box">
+          <h4>Jacascript</h4>
+          <div class="percent">
+            <div style="width: 65%"></div>
+          </div>
+        </div>
+        <div class="box">
+          <h4>jQuery</h4>
+          <div class="percent">
+            <div style="width: 20%"></div>
+          </div>
+        </div>
+        <div class="box">
+          <h4>Java</h4>
+          <div class="percent">
+            <div style="width: 55%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about interest">
+        <h2 class="title2">Interest</h2>
+        <ul>
+          <li><i class="fa fa-building-o" aria-hidden="true"></i>Programming</li>
+          <li><i class="fa fa-film" aria-hidden="true"></i>Watching Movie</li>
+          <li><i class="fa fa-music" aria-hidden="true"></i>Listening Music</li>
+          <li><i class="fa fa-leanpub" aria-hidden="true"></i>Learning New Things</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</body></html>
